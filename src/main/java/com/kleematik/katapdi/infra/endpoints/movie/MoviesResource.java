@@ -11,6 +11,9 @@ import java.util.Map;
 import java.util.Optional;
 
 @RequiredArgsConstructor
+@CrossOrigin(origins = {
+        "https://kata-imdb.herokuapp.com"
+})
 @RestController
 @RequestMapping(MoviesResource.MOVIE_URL)
 public class MoviesResource {
