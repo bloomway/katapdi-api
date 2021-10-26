@@ -14,14 +14,14 @@ import org.springframework.stereotype.Service;
 import java.util.Map;
 
 @Slf4j
-@Service
+//@Service
 public class IMDBMovieJobLauncherService {
 
-    @Autowired
+  //  @Autowired
     private JobLauncher jobLauncher;
 
-    @Autowired
-    @Qualifier(IMDBMovieBatchConfig.MOVIE_LAUNCHER_JOB)
+    //@Autowired
+    //@Qualifier(IMDBMovieBatchConfig.MOVIE_LAUNCHER_JOB)
     private Job job;
 
     public BatchStatus execute() throws JobInstanceAlreadyCompleteException,

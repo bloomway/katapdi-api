@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 @RequiredArgsConstructor
-@Component
+//@Component
 public class IMDBBatchWriter implements ItemWriter<Movie> {
 
     private final MovieDao movieDao;

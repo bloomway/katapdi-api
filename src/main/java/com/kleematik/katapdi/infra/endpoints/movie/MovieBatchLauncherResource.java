@@ -13,14 +13,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RequiredArgsConstructor
-@RestController
-@RequestMapping("/api/batch")
+//@RestController
+//@RequestMapping("/api/batch")
 public class MovieBatchLauncherResource {
 
     private final IMDBMovieJobLauncherService imdbMovieJobLauncherService;
 
-    @GetMapping("/movie")
-    @ResponseBody
+   // @GetMapping("/movie")
+    //@ResponseBody
     public BatchStatus execute() throws JobInstanceAlreadyCompleteException,
             JobExecutionAlreadyRunningException, JobParametersInvalidException,
             JobRestartException {

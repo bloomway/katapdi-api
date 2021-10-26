@@ -19,8 +19,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @RequiredArgsConstructor
-@Configuration
-@EnableBatchProcessing
+//@Configuration
+//@EnableBatchProcessing
 public class IMDBMovieBatchConfig {
 
     private static final String JOB_NAME = "MOVIE__LAUNCHER";
@@ -34,8 +34,8 @@ public class IMDBMovieBatchConfig {
     private final IMDBBatchWriter imdbBatchWriter;
 
 
-    @Bean
-    @Qualifier(MOVIE_LAUNCHER_JOB)
+    //@Bean
+    //@Qualifier(MOVIE_LAUNCHER_JOB)
     public Job movieLauncherJob() {
         return jobBuilderFactory.get(JOB_NAME)
                 .incrementer(new RunIdIncrementer())
@@ -45,7 +45,7 @@ public class IMDBMovieBatchConfig {
                 .build();
     }
 
-    @Bean
+    //@Bean
     public Step loadMovieStep(
             ItemReader<Movie> movieItemReader,
             ItemWriter<Movie> movieItemWriter
@@ -59,17 +59,17 @@ public class IMDBMovieBatchConfig {
                 .build();
     }
 
-    @Bean
+    //@Bean
     public ItemReader<Movie> itemReader() {
         return new IMDBBatchReader(batchProperties.getWorkDir(), flatFileItemReader());
     }
 
-    @Bean
+    //@Bean
     public IMDBFlatFileItemReader.LineMapper lineMapper() {
         return new IMDBFlatFileItemReader.LineMapper();
     }
 
-    @Bean
+    //@Bean
     public IMDBFlatFileItemReader flatFileItemReader() {
         return new IMDBFlatFileItemReader(lineMapper());
     }
