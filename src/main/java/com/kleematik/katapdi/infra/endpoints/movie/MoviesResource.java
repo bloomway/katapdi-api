@@ -12,9 +12,6 @@ import java.util.Optional;
 
 @RequiredArgsConstructor
 @RestController
-@CrossOrigin(origins = {
-        "http://localhost:4200",
-})
 @RequestMapping(MoviesResource.MOVIE_URL)
 public class MoviesResource {
 
