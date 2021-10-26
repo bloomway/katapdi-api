@@ -10,8 +10,8 @@ import org.springframework.context.annotation.Configuration;
 @NoArgsConstructor
 @Getter
 @Setter
-@Configuration
-@ConfigurationProperties(prefix = "app.batch")
+//@Configuration
+//@ConfigurationProperties(prefix = "app.batch")
 public class BatchProperties {
     private String workDir;
     private String chunkSize;

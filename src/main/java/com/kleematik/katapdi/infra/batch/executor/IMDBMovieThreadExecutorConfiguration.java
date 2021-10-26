@@ -14,7 +14,7 @@ import java.util.concurrent.Executor;
 
 @Slf4j
 @RequiredArgsConstructor
-@Configuration
+//@Configuration
 public class IMDBMovieThreadExecutorConfiguration {
 
     public static final String THREAD_PREFIX = "MovieBatchThread-";
@@ -24,8 +24,8 @@ public class IMDBMovieThreadExecutorConfiguration {
 
     private final BatchProperties batchProperties;
 
-    @Bean(name = "movieBatchExecutor")
-    @Qualifier(MOVIE_TASK_EXECUTOR)
+    //@Bean(name = "movieBatchExecutor")
+   // @Qualifier(MOVIE_TASK_EXECUTOR)
     public ThreadPoolTaskExecutor executor() {
         log.info("Creating MovieBatch ThreadExecutor");
 

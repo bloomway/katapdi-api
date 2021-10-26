@@ -6,13 +6,8 @@ app:
       limit: 60
 logging:
   level:
-    root: warn
     com:
       kleematik: warn
-    org:
-      springframework:
-        web: warn
-
 spring:
   application:
     name: imdb
@@ -26,8 +21,8 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQL94Dialect
-      temp:
-        use_jdbc_metadata_defaults: false
+        temp:
+          use_jdbc_metadata_defaults: false
   batch:
     initialize-schema: ALWAYS
     job:
