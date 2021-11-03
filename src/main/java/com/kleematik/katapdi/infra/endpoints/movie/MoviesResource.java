@@ -2,6 +2,7 @@ package com.kleematik.katapdi.infra.endpoints.movie;
 
 import com.kleematik.katapdi.application.movie.services.GetMovies;
 import com.kleematik.katapdi.infra.endpoints.model.ApiResponse;
+import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,9 +12,6 @@ import java.util.Map;
 import java.util.Optional;
 
 @RequiredArgsConstructor
-@CrossOrigin(origins = {
-        "https://kata-imdb.herokuapp.com"
-})
 @RestController
 @RequestMapping(MoviesResource.MOVIE_URL)
 public class MoviesResource {
@@ -22,7 +20,8 @@ public class MoviesResource {
 
     private final GetMovies getMovies;
 
-    @GetMapping
+    @ApiOperation(value = "View list of all movies for a particular page")
+    @GetMapping(produces = "application/json")
     public ResponseEntity<ApiResponse> execute(
             @RequestParam(value = "k", defaultValue = "") String query ,
             @RequestParam(value = "p", defaultValue = "0") int page

@@ -10,20 +10,7 @@ logging:
       kleematik: warn
 spring:
   application:
-    name: imdb
-  datasource:
-    driver-class-name: org.postgresql.Driver
-    name: imdb
-  jpa:
-    show-sql: false
-    hibernate:
-      ddl-auto: none
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.PostgreSQL94Dialect
-        temp:
-          use_jdbc_metadata_defaults: false
-  batch:
-    initialize-schema: ALWAYS
-    job:
-      enabled: false
+    name: kataimdb
+
+server:
+  port: 8081

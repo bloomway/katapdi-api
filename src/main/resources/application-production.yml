@@ -1,0 +1,27 @@
+app:
+  env:
+    production: true
+logging:
+  level:
+    com:
+      kleematik: warn
+spring:
+  devtools:
+    restart:
+      enabled: false
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    name: imdb
+  jpa:
+    show-sql: false
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQL94Dialect
+        temp:
+          use_jdbc_metadata_defaults: false
+  batch:
+    initialize-schema: ALWAYS
+    job:
+      enabled: false
