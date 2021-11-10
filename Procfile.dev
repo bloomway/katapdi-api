@@ -1,1 +1,0 @@
-web: java -jar target/katapdi.jar --spring.profiles.active=dev
